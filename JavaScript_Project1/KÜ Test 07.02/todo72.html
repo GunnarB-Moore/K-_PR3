@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name= "author" content="Brunkhorst">
+    <meta name="keywords" content="HFH, Lernplanung, organisiertes Lernen">
+    <title>Deine To-Do List</title>
+    <link href="style72.css" rel="stylesheet">
+</head>
+
+<!-- Kopfzeile gestalten mit "Hochschule der Zukunft" und ggf. Logo; nutze einfach das Box-Modell, padding, margin einstellen -->
+<body>
+  <div class="header">
+    <a href="#default" class="logo">To-Do Icon</a>
+    <div class="header-right">
+      <a class="active" href="#home">Home</a>
+      <a href="#contact">Mitarbeitende HDS</a>
+      <a href="#about">About HDS</a>
+    </div>
+  </div> 
+   <!--Erfassen von To-Dos und Anzeigen einer To-Do-Liste-->
+  
+    <div id="todoList">
+        <h1>Erfasse deine To-Dos</h1>
+        <p id="motivationalquote"> <cite> „Ich kann Versagen akzeptieren, keiner ist perfekt. Aber was ich nicht akzeptieren kann ist, es nicht zu versuchen.“ – Michael Jordan</cite></p> 
+    </div>
+    
+
+    <div id="todoFormular">
+            <h3><u>Neues To-Do erfassen</u></h3>
+            <form action="save_todo.php" method="post"></form>
+            <!-- Eingabefeld für Text mit Hinweis und Kalenderfunktion-->
+            <input type="text" id="todoName" placeholder="What to do" />
+            <input type="date" id="dueDate">
+            <!-- durch onclick Event wird JavaScript Function savetodo() aufgerufen, sodass To Dos in Liste gespeichert werden-->
+            <button onclick="savemyTodo()">Speichern</button>
+    </div>
+    <div id="todoList">
+      <h2> <b><br> To-Do Liste ... wie viel bleibt zu tun?</b></h2>
+      <ul id="todos">
+      <!--Liste für Anzahl der vorliegenden To-Dos-->
+      <p id="todoCount">Anzahl der To-Dos: 0</p>
+    </div>
+
+    
+    
+  <!-- Einbindung des JavaScriptes; Funktion saveTodo ist zwischen Z. {aktualisieren} -->
+
+
+<!--  PHP-Code einbinden? --> 
+
+<script>  function savemyTodo() {
+  var todoName = document.getElementById('todoName').value;
+  var dueDate = document.getElementById('dueDate').value; 
+// wichtig! -> innerhalb der function saveTodo()
+var todoName = document.getElementById('todoName').value;
+var dueDate = document.getElementById('dueDate').value;
+}
+//Server-Anfrage über AJAX 
+// Nach dem SPEICHERN (button), neues Listenelement (<li>) createn
+  var todoList = document.getElementById('todos');
+            var todoItem = document.createElement('li');
+            todoItem.textContent = todoName + ' - ' + dueDate + ' - Status: offen';
+            todoList.appendChild(todoItem);
+
+
+// AKTUALISIERE Zahl für "Anzahl der To-Dos: 0,1,2,..n; "+count ist der "Counter" der id todoCount, wenn weitere To-Do im form-element eingetragen werden 
+  var todoCount = document.getElementById('todoCount');
+            var count = document.querySelectorAll('#todos li').length;
+            todoCount.textContent = 'Anzahl der To-Dos: ' + count;
+</script>
+
+
+
+<!-- Footer der Website mit einem User Advice & Copyright-->
+    <footer>Lieber User, dieses webbasierte Tool soll dir zur Studienorganisation dienen. Du kannst deine To Do's einfach mit Bezeichnung und Fälligkeit auflisten. 
+      Dies ist mit einer Datenbank verknüpft.  <br>       
+<b> Das Tool ist in der Entwicklung, kann durch dein Feedback laufend verbessert werden. Bitte kontaktiere uns via ..., um Fehler zu melden oder Verbesserungsvorschläge zu liefern. </b><br> &copy; Gunnar Brunkhorst </footer>
+</body>
+
+
+</html>
+
+

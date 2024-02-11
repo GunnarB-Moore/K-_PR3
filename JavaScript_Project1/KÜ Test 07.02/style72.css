@@ -1,0 +1,84 @@
+/* info where from: https://www.w3schools.com/csS/css3_box-sizing.asp#:~:text=Since%20the%20result%20of%20using%20the%20box%2Dsizing%3A%20border%2Dbox%3B%20is%20so%20much%20better%2C%20many%20developers%20want%20all%20elements%20on%20their%20pages%20to%20work%20this%20way. */
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #1AA0FF; /* Farbe von Wrike-App */
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: white; /* Textfarbe */
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: #0C6EB6; /* Dunklere Farbe beim Hovern */
+  color: white;
+}
+
+.header a.active {
+  background-color: #0C6EB6; /* Aktive Farbe */
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+
+
+/* Start des Tool-Body*/ 
+
+/*To-Do: Style der Headline am Ende anpassen*/
+h1 {
+    font-size: 2.5rem; /* Optimiert die Größe der Überschrift */
+    font-weight: 600;
+    color: #1D1D1D; /* Textfarbe */
+}
+
+h2 {
+    color: #333; /* Textfarbe */
+    font-size: 1.25rem; /* Optimiert die Größe der Überschrift */
+}
+
+h3 {
+    color: #333; /* Textfarbe */
+    font-size: 1.125rem; /* Optimiert die Größe der Überschrift */
+}
+
+#todoList {
+    color: #1D1D1D; /* Textfarbe */
+    font-style: italic; /* Schriftstil festlegen */
+}
+
+p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
